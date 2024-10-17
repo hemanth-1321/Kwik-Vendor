@@ -1,147 +1,84 @@
-import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { useFonts } from 'expo-font';
-
-import register from './screens/register';
-import landingPage from './components/landingPage';
-import grocery from './screens/grocery';
-import vegetable from './screens/vegetable';
-import fruits from './screens/fruits';
-import vegefruits from './screens/VegeFruits';
-import restaurant from './screens/restaurant';
-import veg from './screens/veg';
-import nonveg from './screens/nonveg';
-import cafes from './screens/cafes';
-import chaats from './screens/chaats';
-import events from './screens/event';
-import catering from './screens/catering';
-import vegcater from './screens/vegcater';
-import nonvegcater from './screens/nonvvegcater';
-import movies from './screens/movies';
-import meenakshi from './screens/meenakshi';
-import lakshmi from './screens/lakshmi';
-import Thanks from './screens/thanks';
-import ComingSoon from './screens/comingsoon';
-
+import * as React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { useFonts } from "expo-font";
+import { Register } from "./AuthPages/Register";
+import { LandingPage } from "./AuthPages/LandingPage";
+import { CategoryPage } from "./AuthPages/CategorySelection";
+import { SubCategoryPage } from "./AuthPages/SubCategoryPage";
+import { ThankYouPage } from "./AuthPages/Thanks";
+import { Home } from "./screens/HomeScreen";
+import { ContactUs } from "./screens/ContactUs";
+import { OrderHistory } from "./screens/OrderHistory";
+import { PostItem } from "./screens/PostItem";
+import { Received } from "./screens/RecivedOrder";
 const Stack = createNativeStackNavigator();
 
 const App = () => {
-  const [hideSplashScreen, setHideSplashScreen] = React.useState(true);
-
   const [fontsLoaded, error] = useFonts({
-    'Inter-Regular': require('./assets/fonts/Inter-Regular.ttf'),
-    'Inter-SemiBold': require('./assets/fonts/Inter-SemiBold.ttf'),
-    'Inter-Bold': require('./assets/fonts/Inter-Bold.ttf'),
-    'Roboto-Medium': require('./assets/fonts/Roboto-Medium.ttf'),
-    'InriaSerif-Bold': require('./assets/fonts/InriaSerif-Bold.ttf'),
-    'ArchivoBlack-Regular': require('./assets/fonts/ArchivoBlack-Regular.ttf'),
+    "Inter-Regular": require("./assets/fonts/Inter-Regular.ttf"),
+    "Inter-SemiBold": require("./assets/fonts/Inter-SemiBold.ttf"),
+    "Inter-Bold": require("./assets/fonts/Inter-Bold.ttf"),
+    "Roboto-Medium": require("./assets/fonts/Roboto-Medium.ttf"),
+    "InriaSerif-Bold": require("./assets/fonts/InriaSerif-Bold.ttf"),
+    "ArchivoBlack-Regular": require("./assets/fonts/ArchivoBlack-Regular.ttf"),
   });
 
   if (!fontsLoaded && !error) {
     return null;
   }
+
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="LandingPage">
         <Stack.Screen
-          name="Register"
-          component={register}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
           name="LandingPage"
-          component={landingPage}
+          component={LandingPage}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Grocery"
-          component={grocery}
+          name="Register"
+          component={Register}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Vegetable"
-          component={vegetable}
+          name="CategoryPage"
+          component={CategoryPage}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Fruits"
-          component={fruits}
+          name="SubCategoryPage"
+          component={SubCategoryPage}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="VegeFruits"
-          component={vegefruits}
+          name="ThankYou"
+          component={ThankYouPage}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Restaurant"
-          component={restaurant}
+          name="Home"
+          component={Home}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Veg"
-          component={veg}
+          name="OrderHistory"
+          component={OrderHistory}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="NonVeg"
-          component={nonveg}
+          name="ContactUs"
+          component={ContactUs}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Cafes"
-          component={cafes}
+          name="PostItem"
+          component={PostItem}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Chaats"
-          component={chaats}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Events"
-          component={events}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Catering"
-          component={catering}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="VegCater"
-          component={vegcater}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="NonVegCater"
-          component={nonvegcater}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Movies"
-          component={movies}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Meenakshi"
-          component={meenakshi}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Lakshmi"
-          component={lakshmi}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Thanks"
-          component={Thanks}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="ComingSoon"
-          component={ComingSoon}
+          name="Received"
+          component={Received}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

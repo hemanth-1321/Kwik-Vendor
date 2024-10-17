@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "kwik",
-    "slug": "Kwik",
+    "slug": "vendor",
     "scheme": "Kwik",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -27,8 +27,9 @@
     },
     "extra": {
       "eas": {
-        "projectId": "046e3aa1-d210-4fda-84e9-ce8a6c93c6a5"
+        "projectId": "324dc359-0693-46e1-a705-caad52a777c4"
       }
-    }
+    },
+    "owner": "hemanth21"
   }
 }

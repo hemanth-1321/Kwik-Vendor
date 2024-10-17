@@ -1,27 +1,26 @@
 import React from 'react';
-import { ImageBackground, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 const Background = ({ children }) => {
   return (
-    <ImageBackground
-      source={require('../assets/background.png')}
-      style={styles.backgroundImage}>
+    <View style={styles.background}>
       <View style={styles.overlay}>
         {children}
       </View>
-    </ImageBackground>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  backgroundImage: {
+  background: {
     flex: 1,
-    resizeMode: 'cover',
+    backgroundColor: 'white', // Set background to white
     justifyContent: 'center',
   },
   overlay: {
     flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Optional: darken the background
+    // Optional: If you want a slight dark overlay, uncomment the following line
+    // backgroundColor: 'rgba(0, 0, 0, 0.5)', 
     justifyContent: 'center',
     alignItems: 'center',
   },
